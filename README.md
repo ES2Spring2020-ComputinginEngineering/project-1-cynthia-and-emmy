@@ -2,7 +2,7 @@
 Project 1 Starter Code
 
 Names:
-Team Name:
+Team Name: Team 7 (Cynthia and Emmy)
 
 Your primary tasks will be to:
 
