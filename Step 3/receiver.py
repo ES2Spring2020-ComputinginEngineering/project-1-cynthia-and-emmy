@@ -1,5 +1,8 @@
 ##################
-# FILL IN HEADER
+# Emmy Daro and Cynthia Jelke
+# This Program converts the data received in logger.py into data that can be
+# plotted and visualized
+# Time to Complete:
 #################
 
 import microbit as mb
@@ -25,7 +28,7 @@ while True:
 
     if incoming is not None: # message was received
         mb.display.show(mb.Image.HEART, delay=100, clear=True, wait=False)
-        
+
         #############################################################
         # FILL IN HERE
         # Incoming is string sent from logger

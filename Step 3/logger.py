@@ -1,5 +1,8 @@
 ##################
-# FILL IN HEADER
+# Emmy Daro and Cynthia Jelke
+# This Program collects pendulum measurements of acceleration and time and
+# sends them to a reciever
+# Time to Complete:
 #################
 
 import microbit as mb
