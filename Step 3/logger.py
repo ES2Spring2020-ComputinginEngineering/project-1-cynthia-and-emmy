@@ -30,11 +30,11 @@ while not mb.button_a.is_pressed():
     # Need to collect accelerometer and time measurements
     # Need to format into a single string
     # Send the string over the radio
-    x_ac=mb.accelerator.get_x()
+    x_ac=mb.accelerometer.get_x()
 
-    y_ac=mb.accelerator.get_y()
+    y_ac=mb.accelerometer.get_y()
 
-    z_ac=mb.accelerator.get_z()
+    z_ac=mb.accelerometer.get_z()
 
     time=mb.runningtime()
 
