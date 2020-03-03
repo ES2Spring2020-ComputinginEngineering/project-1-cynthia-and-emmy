@@ -36,7 +36,7 @@ while not mb.button_a.is_pressed():
 
     z_ac=mb.accelerometer.get_z()
 
-    time=mb.runningtime()
+    time=mb.running_time()
 
     message= str(time) + ',' + str(x_ac) + ',' + str(y_ac) + ',' + str(z_ac)
     ######################################################
