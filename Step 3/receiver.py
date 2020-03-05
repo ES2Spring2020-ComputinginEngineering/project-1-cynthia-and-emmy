@@ -8,7 +8,7 @@
 
 # plotted and visualized
 
-# Time to Complete:
+# Time to Complete: 3 hours
 
 #################
 
