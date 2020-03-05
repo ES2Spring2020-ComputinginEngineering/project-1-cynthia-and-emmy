@@ -54,8 +54,8 @@ while True:
 
     incoming = radio.receive() # Read from radio
 
-    mb.sleep(1000)
-    print("This is incoming")
+    mb.sleep(5)
+    #print("This is incoming")
     #print(incoming)
 
     if incoming is not None: # message was received
@@ -75,7 +75,7 @@ while True:
         #############################################################
 
 
-        value = tuple(incoming.split(','))
+        value = eval(incoming)
 
         print(value)
         mb.sleep(100)
