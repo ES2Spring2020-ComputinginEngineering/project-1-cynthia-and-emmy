@@ -6,7 +6,7 @@
 #DESCRIPTION: This code is a simulation of a simple pendulum that graphs its 
 #             position, velocity, and acceleration vs. time and also calculates
 #             its period
-#HOURS TO COMPLETE: 5 hours
+#HOURS TO COMPLETE: 8 hours
 
 
 import numpy as np
