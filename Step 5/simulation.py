@@ -14,6 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 
+
 ###########################################################
 #initialize
 #ARGUMENTS: 
@@ -32,7 +33,7 @@ def initialize(a,b):
 
     length = lengths[a]
 
-    postheta = np.pi/b
+    postheta = b
 
     veltheta = 0
 
@@ -57,13 +58,13 @@ def initialize(a,b):
     
 def update(pos,vel,acc,length):
 
-    dt = (10/10000) 
+    dt = (10/10000) #time step
 
     posNext = pos+vel*dt #eulers method to find position
 
     velNext = vel+acc*dt #eulers method to find velocity
 
-    accNext = -9.81*np.sin(pos)/length #eulers method to find acceleration 
+    accNext = (-9.81*np.sin(pos*np.pi/180)/length) #eulers method to find acceleration 
 
     return posNext, velNext, accNext
 
@@ -109,11 +110,11 @@ def plot(posNext,velNext,accNext,length):
         
         #adds the new values to the arrays created at the beginning of the 
         #function
-        posx = np.append(posx,length*np.sin(posNext)) 
+        posx = np.append(posx,length*np.sin(posNext*np.pi/180)) 
 
-        velx = np.append(velx,length*velNext*np.cos(posNext))
+        velx = np.append(velx,length*velNext*np.cos(posNext*np.pi/180))
 
-        accx = np.append(accx,length*(-np.sin(posNext)*(velNext**2)+np.cos(posNext)*accNext)) 
+        accx = np.append(accx,length*(-np.sin(posNext*np.pi/180)*(velNext**2)+np.cos(posNext*np.pi/180)*accNext)) 
 
         t = np.append(t,time[i])
 
@@ -180,9 +181,8 @@ time = np.linspace(0,10,10000)
 
 #set which pendulum length you're using
 a = 0
-#set initial position????
-b= 2
-
+#set initial angle
+b= np.pi/2
 #initialize the needed variables
 pos, vel, acc, length = initialize(a,b)
 
