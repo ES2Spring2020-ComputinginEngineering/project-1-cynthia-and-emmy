@@ -6,7 +6,7 @@
 #DESCRIPTION: This code is a simulation of a simple pendulum that graphs its 
 #             position, velocity, and acceleration vs. time and also calculates
 #             its period
-#HOURS TO COMPLETE: 8 hours
+#HOURS TO COMPLETE: 5 hours
 
 
 import numpy as np
@@ -131,7 +131,7 @@ def plot(posNext,velNext,accNext,length):
 
             prev = time[i]
 
-    print("Pendulum period " + str(period)) 
+    print("The period of the pendulum is " + str(round(period, 4)) + " seconds!") 
 
             
     #plots the position vs. time graph
@@ -139,7 +139,7 @@ def plot(posNext,velNext,accNext,length):
 
     plt.ylabel("X position (m)")
 
-    plt.title("Pendulum Length " + str(length))
+    plt.title("Pendulum Length " + str(length) + " Position vs. Time")
 
     plt.plot(t,posx) 
 
@@ -151,7 +151,7 @@ def plot(posNext,velNext,accNext,length):
 
     plt.ylabel("X velocity (m/s)")
 
-    plt.title("Pendulum Length " + str(length))
+    plt.title("Pendulum Length " + str(length) + " Velocity vs. Time")
 
     plt.plot(t,velx)
 
@@ -163,7 +163,7 @@ def plot(posNext,velNext,accNext,length):
 
     plt.ylabel("X acceleration (m/s/s)")
 
-    plt.title("Pendulum Length " + str(length))
+    plt.title("Pendulum Length " + str(length) + " Acceleration vs. Time")
 
     plt.plot(t,accx) 
 
@@ -188,4 +188,38 @@ pos, vel, acc, length = initialize(a,b)
 
 #plots position vs. time, velocity vs. time, and acceleration vs. time as well
 #as calculates the period 
+plot(pos, vel, acc, length)
+
+
+#Does same as above section for the different lengths
+########################################################
+
+a = 1
+
+pos, vel, acc, length = initialize(a,b)
+
+plot(pos, vel, acc, length)
+
+########################################################
+
+a = 2
+
+pos, vel, acc, length = initialize(a,b)
+
+plot(pos, vel, acc, length)
+
+########################################################
+
+a = 3
+
+pos, vel, acc, length = initialize(a,b)
+
+plot(pos, vel, acc, length)
+
+########################################################
+
+a = 4
+
+pos, vel, acc, length = initialize(a,b)
+
 plot(pos, vel, acc, length)
