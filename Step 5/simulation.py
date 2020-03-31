@@ -196,7 +196,7 @@ for i in range(5):
     plot(pos, vel, acc, length)
 
 #Finding and Graphing for 6o degrees
-print("The starting angle is 60 degrees")
+print("The starting angle is 120 degrees")
     
 for i in range(5):
     #set which pendulum length you're using
