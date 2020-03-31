@@ -195,7 +195,7 @@ for i in range(5):
     #as calculates the period 
     plot(pos, vel, acc, length)
 
-#Finding and Graphing for 6o degrees
+#Finding and Graphing for 120 degrees
 print("The starting angle is 120 degrees")
     
 for i in range(5):
