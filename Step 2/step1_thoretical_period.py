@@ -7,7 +7,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
-length_list=[46.0,41.8,35.0,29.5,22.8]
+length_list=[34,43,53,62,72]
 length_array=np.array(length_list)
 print(length_list)
 
