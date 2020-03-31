@@ -6,7 +6,7 @@
 #DESCRIPTION: This code is a simulation of a simple pendulum that graphs its 
 #             position, velocity, and acceleration vs. time and also calculates
 #             its period
-#HOURS TO COMPLETE: 8 hours
+#HOURS TO COMPLETE: 5 hours
 
 
 import numpy as np
@@ -179,47 +179,35 @@ lengths=np.array([.34,.43,.53,.62,.72])
 #setting the times checked with an increment of 1/1000
 time = np.linspace(0,10,10000)
 
-#set which pendulum length you're using
-a = 0
-#set initial angle
-b= np.pi/2
-#initialize the needed variables
-pos, vel, acc, length = initialize(a,b)
+#Finding and Graphing for 6o degrees
+print("The starting angle is 60 degrees")
 
-#plots position vs. time, velocity vs. time, and acceleration vs. time as well
-#as calculates the period 
-plot(pos, vel, acc, length)
+for i in range(5):
+    #set which pendulum length you're using
+    a = i
+    #set initial angle
+    b= np.pi/3
+    
+    #initialize the needed variables
+    pos, vel, acc, length = initialize(a,b)
+    
+    #plots position vs. time, velocity vs. time, and acceleration vs. time as well
+    #as calculates the period 
+    plot(pos, vel, acc, length)
 
+#Finding and Graphing for 6o degrees
+print("The starting angle is 60 degrees")
+    
+for i in range(5):
+    #set which pendulum length you're using
+    a = i
+    #set initial angle
+    b= 2*np.pi/3
+    
+    #initialize the needed variables
+    pos, vel, acc, length = initialize(a,b)
+    
+    #plots position vs. time, velocity vs. time, and acceleration vs. time as well
+    #as calculates the period 
+    plot(pos, vel, acc, length)
 
-#Does same as above section for the different lengths
-########################################################
-
-a = 1
-
-pos, vel, acc, length = initialize(a,b)
-
-plot(pos, vel, acc, length)
-
-########################################################
-
-a = 2
-
-pos, vel, acc, length = initialize(a,b)
-
-plot(pos, vel, acc, length)
-
-########################################################
-
-a = 3
-
-pos, vel, acc, length = initialize(a,b)
-
-plot(pos, vel, acc, length)
-
-########################################################
-
-a = 4
-
-pos, vel, acc, length = initialize(a,b)
-
-plot(pos, vel, acc, length)
