@@ -47,6 +47,8 @@ Where to Access the Code and Files for Each Step:
                   
   Step 5:
   
+    Pseudocode --> Step5_pseudocode
+    
     Code --> Simulation.py
     
   Final Report (Step 6):
