@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 31 16:17:46 2020
+
+@author: emeliadaro
+"""
+#Emmy Daro and Cynthia Jelke
+#project 1 part 4
+#CALCULATION OF PERIODS FROM REAL WORLD DATA
+#time spend about 2 hours
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as sig
+
+
+data34cm = np.genfromtxt('dataset1_34cm.csv', delimiter=',')
+data43cm = np.genfromtxt('dataset2_43cm.csv', delimiter=',')
+data53cm = np.genfromtxt('dataset3_53cm.csv', delimiter=',')
+data62cm = np.genfromtxt('dataset4_62cm.csv', delimiter=',')
+data72cm = np.genfromtxt('dataset5_72cm.csv', delimiter=',')
+
+#Crop arrays to clean data rows
+data34cm =  data34cm[500:1300,:]
+data43cm =  data43cm[500:1300,:]
+data53cm =  data53cm[500:1300,:]
+data62cm =  data62cm[500:1300,:]
+data72cm =  data72cm[500:1300,:]
+
+#Calculate accelerations in G units from milliG (and time from milliseconds to seconds)
+data34cm =  data34cm/1000
+data43cm =  data43cm/1000
+data53cm =  data53cm/1000
+data62cm =  data62cm/1000
+data72cm =  data72cm/1000
+
+periods_array=[]
+
+#truncates the data to a smaller set that will calculate faster
+result = data34cm
+time = result[100:300, 0]
+x_ac =  result[100:300, 1]
+
+#finds the peaks in the  x data and gets the corresponding timestamp
+x_ac_= sig.medfilt(x_ac)
+x_peaks, _ = sig.find_peaks(x_ac_)
+time1 = time[x_peaks]
+period = []
+
+#subtracts each subsequent time stamp to find a set of periods
+for x in range(len(time1)-1):
+    y = time1[x+1] - time1[x]
+    period += [y]
+# gets the averages of the periods
+period_av_34 = np.average(period)*10
+periods_array.append(period_av_34)
+ 
+print('average period for 34cm:')
+print(period_av_34)
+
+#does the same thing as a bove for all pendulum lengths
+###############################################################################
+result = data43cm
+time = result[100:300, 0]
+x_ac =  result[100:300, 1]
+
+x_ac_= sig.medfilt(x_ac)
+x_peaks, _ = sig.find_peaks(x_ac_)
+time1 = time[x_peaks]
+period = []
+
+for x in range(len(time1)-1):
+    y = time1[x+1] - time1[x]
+    period += [y]
+period_av_43 = np.average(period)*10
+periods_array.append(period_av_43)
+print('average period for 43cm:')
+print(period_av_43)
+
+##############################################################################
+result = data53cm
+time = result[100:300, 0]
+x_ac =  result[100:300, 1]
+
+x_ac_= sig.medfilt(x_ac)
+x_peaks, _ = sig.find_peaks(x_ac_)
+time1 = time[x_peaks]
+period = []
+
+for x in range(len(time1)-1):
+    y = time1[x+1] - time1[x]
+    period += [y]
+period_av_53 = np.average(period)*10
+
+print('average period for 53cm:')
+print(period_av_53)
+periods_array.append(period_av_53)
+##############################################################################
+
+result = data62cm
+time = result[100:300, 0]
+x_ac =  result[100:300, 1]
+
+x_ac_= sig.medfilt(x_ac)
+x_peaks, _ = sig.find_peaks(x_ac_)
+time1 = time[x_peaks]
+period = []
+
+for x in range(len(time1)-1):
+    y = time1[x+1] - time1[x]
+    period += [y]
+period_av_62 = np.average(period)*10
+
+print('average period for 62cm:')
+print(period_av_62)
+periods_array.append(period_av_62)
+##############################################################################
+
+result = data72cm
+time = result[100:300, 0]
+x_ac =  result[100:300, 1]
+
+x_ac_= sig.medfilt(x_ac)
+x_peaks, _ = sig.find_peaks(x_ac_)
+time1 = time[x_peaks]
+period = []
+
+for x in range(len(time1)-1):
+    y = time1[x+1] - time1[x]
+    period += [y]
+period_av_72 = np.average(period)*10
+
+print('average period for 72cm:')
+print(period_av_72)
+periods_array.append(period_av_72)
+periods_array=np.array(periods_array)
+
+#plots the periods vs the pendulum lengths
+
+length_list=[34,43,53,62,72]
+length_array=np.array(length_list)
+
+fig=plt.plot(length_array,periods_array,'o', color='black')
+plt.ylabel('period in seconds')
+plt.xlabel('length in cm')
+plt.title('Period time as a function of pendulum length')
