@@ -1,4 +1,5 @@
 PROJECT 1
+
 Team: Emmy Daro and Cynthia Jelke
 
 This Project compares the theoretical period of five pendulums of different lengths based off of ideal formulas with the calculated
